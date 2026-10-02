@@ -1,0 +1,51 @@
+configuration {
+    modi: "drun,run,window";
+    show-icons: false;
+    terminal: "xterm";
+    font: "DejaVu Sans Mono 10";
+}
+
+* {
+    background: #0b0b0b;
+    foreground: #e5e5e5;
+    selected: #1d1d1d;
+    border: #303030;
+}
+
+window {
+    width: 38%;
+    border: 1px;
+    border-color: @border;
+    padding: 12px;
+}
+
+mainbox {
+    children: [ inputbar, listview ];
+    spacing: 10px;
+}
+
+inputbar {
+    children: [ prompt, entry ];
+}
+
+prompt {
+    text-color: @foreground;
+}
+
+entry {
+    text-color: @foreground;
+}
+
+listview {
+    lines: 8;
+    columns: 1;
+    fixed-height: false;
+}
+
+element {
+    padding: 6px;
+}
+
+element selected {
+    background-color: @selected;
+}

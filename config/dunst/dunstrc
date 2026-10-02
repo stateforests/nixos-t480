@@ -1,0 +1,42 @@
+[global]
+    monitor = 0
+    follow = mouse
+    width = 320
+    height = 120
+    origin = top-right
+    offset = 12x36
+    scale = 0
+    notification_limit = 5
+
+    font = DejaVu Sans Mono 9
+
+    frame_width = 1
+    frame_color = "#303030"
+
+    separator_height = 1
+    separator_color = "#303030"
+
+    padding = 10
+    horizontal_padding = 10
+    text_icon_padding = 8
+
+    background = "#0b0b0b"
+    foreground = "#e5e5e5"
+
+    corner_radius = 0
+
+[urgency_low]
+    background = "#0b0b0b"
+    foreground = "#777777"
+    timeout = 5
+
+[urgency_normal]
+    background = "#0b0b0b"
+    foreground = "#e5e5e5"
+    timeout = 8
+
+[urgency_critical]
+    background = "#0b0b0b"
+    foreground = "#ffffff"
+    frame_color = "#aaaaaa"
+    timeout = 0

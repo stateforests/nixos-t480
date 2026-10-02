@@ -1,0 +1,10 @@
+# Local / machine-specific secrets
+network-secrets.env
+*.secret
+*.secrets
+*.env
+
+# Nix build / temporary files
+result
+result-*
+.direnv/

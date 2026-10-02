@@ -1,0 +1,18 @@
+#!/bin/sh
+
+# Keep X11 startup explicit and boring.
+# greetd/tuigreet invokes startx, which reads this file.
+
+export XDG_SESSION_TYPE=x11
+
+# Load terminal colours/font settings.
+if command -v xrdb >/dev/null 2>&1; then
+    xrdb -merge /etc/Xresources
+fi
+
+# Lock the session when X11 is idle/suspended.
+if command -v xss-lock >/dev/null 2>&1 && command -v i3lock >/dev/null 2>&1; then
+    xss-lock -- i3lock --nofork &
+fi
+
+exec dbus-run-session bspwm

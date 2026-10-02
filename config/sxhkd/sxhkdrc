@@ -1,0 +1,95 @@
+# ---------------------------------------------------------------------------
+# Applications
+# ---------------------------------------------------------------------------
+
+super + Return
+    xterm
+
+super + d
+    rofi -show drun
+
+super + shift + q
+    bspc node -c
+
+super + Escape
+    pkill -USR1 -x polybar
+
+# ---------------------------------------------------------------------------
+# bspwm
+# ---------------------------------------------------------------------------
+
+super + {h,j,k,l}
+    bspc node -{west,south,north,east}
+
+super + shift + {h,j,k,l}
+    bspc node -s {west,south,north,east}
+
+super + {1-9}
+    bspc desktop -f '^{1-9}'
+
+super + shift + {1-9}
+    bspc node -d '^{1-9}'
+
+super + space
+    bspc node -t {tiled,floating}
+
+super + f
+    bspc node -t fullscreen
+
+super + m
+    bspc node -t monocle
+
+super + Tab
+    bspc node -f next.local
+
+super + shift + Tab
+    bspc node -f prev.local
+
+super + shift + r
+    bspc wm -r
+
+# ---------------------------------------------------------------------------
+# Audio
+# ---------------------------------------------------------------------------
+
+XF86AudioRaiseVolume
+    wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
+
+XF86AudioLowerVolume
+    wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+
+XF86AudioMute
+    wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+
+# ---------------------------------------------------------------------------
+# Brightness
+# ---------------------------------------------------------------------------
+
+XF86MonBrightnessUp
+    brightnessctl set +5%
+
+XF86MonBrightnessDown
+    brightnessctl set 5%-
+
+# ---------------------------------------------------------------------------
+# Media
+# ---------------------------------------------------------------------------
+
+XF86AudioPlay
+    playerctl play-pause
+
+XF86AudioNext
+    playerctl next
+
+XF86AudioPrev
+    playerctl previous
+
+# ---------------------------------------------------------------------------
+# Screenshots / lock
+# ---------------------------------------------------------------------------
+
+Print
+    scrot "$HOME/files/media/photos/screenshot-%Y-%m-%d-%H%M%S.png"
+
+super + l
+    i3lock --nofork
